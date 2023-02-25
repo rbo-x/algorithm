@@ -55,6 +55,16 @@ func (hm *HashMap[K, V]) Get(key K) (V,bool) {
     return result,false
 }
 
+func (hm *HashMap[K, V]) Delete(key K) bool {
+    idx := findEntry(hm.entries,key)
+    if hm.entries[idx].hasValue {
+        hm.entries[idx] = entry[K, V]{}
+        hm.size--
+        return true
+    }
+    return false
+}
+
 
 func (hm *HashMap[K, V]) adjust(newSize int) {
     newEntries := make([]entry[K,V],newSize)
