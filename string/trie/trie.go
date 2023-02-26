@@ -117,6 +117,33 @@ func (t *Trie[T]) LongestPrefixOf(s string) string {
     return s[0:idx]
 }
 
+func (t *Trie[T]) delete(n *node[T],key string, d int) *node[T]{
+    if n == nil {
+        return nil
+    }
+    if len(key) == d {
+        n.hasValue = false
+    }else{
+        x:=key[d]
+        n.next[x] = t.delete(n.next[x],key,d+1)
+    }
+
+    if n.hasValue {
+        return n
+    }
+
+    for _,c := range n.next {
+        if c != nil {
+            return n
+        }
+    }
+    return nil
+}
+
+func (t *Trie[T]) Delete(key string) {
+    t.root = t.delete(t.root,key,0)
+}
+
 
 func (t *Trie[T]) print(n *node[T],char string) {
     fmt.Printf("%s : [ ",string(char))  

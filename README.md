@@ -2,9 +2,10 @@
 - [] Searching
     - [*] Binary Search Tree
     - [*] Balanced Search Tree
-    - [] Hash Map 
+    - [*] Hash Map 
     - [] Symbol Tree
 - [] Sorting
 - [] Graph 
 - [] String 
+    - [] trie
 - [] Basics

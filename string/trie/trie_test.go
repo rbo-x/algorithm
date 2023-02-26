@@ -13,7 +13,8 @@ func TestPut(t *testing.T) {
     trie.Put("sea",20)
     trie.Put("shore",20)
     t.Log(trie.Keys())
-    t.Log(trie.KeysWithPrefix("sh"))
-    t.Log(trie.KeysThatMatch("sh..."))
-    t.Log(trie.LongestPrefixOf("shel"))
+    trie.Delete("shore")
+    t.Log(trie.Keys())
+    trie.Delete("sea")
+    t.Log(trie.Keys())
 }
