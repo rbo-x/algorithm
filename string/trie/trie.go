@@ -160,7 +160,6 @@ func (t *Trie[T]) print(n *node[T],char string) {
     }
 }
 
-
 func (t *Trie[T]) Print() {
     t.print(t.root,"root")
 }
