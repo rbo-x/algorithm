@@ -7,5 +7,6 @@
 - [] Sorting
 - [] Graph 
 - [] String 
-    - [] trie
+    - [*] trie
+    - [*] ternary search tries
 - [] Basics

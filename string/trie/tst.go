@@ -12,7 +12,6 @@ type Tst[T any] struct {
     root *tstNode[T]
 }
 
-
 func (tst *Tst[T]) put(n *tstNode[T],key string,value T,d int) *tstNode[T]{
     x := key[d] 
     if n == nil {
